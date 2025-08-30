@@ -86,7 +86,7 @@
 
         const Header = () => (
             React.createElement("header", { className: "bg-primary text-text-dark text-center py-6 shadow-md" },
-                React.createElement("h1", { className: "text-4xl font-bold font-montserrat" }, "NetRoute Academy"),
+                React.createElement("h1", { className: "text-4xl font-bold font-montserrat" }, "Net Route Academy"),
                 React.createElement("p", { className: "mt-2 text-lg" }, "Your Go-To Channel for Cybersecurity Insights & Scam Prevention")
             )
         );
@@ -207,7 +207,7 @@
                 switch (activeTab) {
                     case 'YouTube-Videos':
                         return React.createElement(FadeIn, null,
-                            React.createElement("h2", { className: "text-3xl font-bold font-montserrat text-primary border-b-2 border-primary pb-2 mb-6" }, "Latest YouTube Videos"),
+                            React.createElement("h2", { className: "text-3xl font-bold font-montserrat text-primary border-b-2 border-primary pb-2 mb-6" }, "Latest YouTube Videos(Tagalog)"),
                             React.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" },
                                 videos.map(video => React.createElement(VideoCard, { key: video.id, ...video, buttonText: "Watch Video" }))
                             )
