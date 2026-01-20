@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Net Route Academy</title>
+  <title>Net Route Academy - Cybersecurity Insights</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -74,75 +74,59 @@
     import ReactDOM from 'react-dom/client';
 
     // --- DATA CONSTANTS ---
-    const labWorkbookVideos = [
-        { id: 'yihreA9t1RU', title: 'CCNA: Router Mode & Commands Lab', thumbnailUrl: 'https://img.youtube.com/vi/yihreA9t1RU/hqdefault.jpg', videoUrl: 'https://youtu.be/yihreA9t1RU' },
-        { id: 'TeJEOaXZKjE', title: 'How to Implement Basic BGP and OSPF with MD5 Authentication | Lab Tutorial', thumbnailUrl: 'https://img.youtube.com/vi/TeJEOaXZKjE/hqdefault.jpg', videoUrl: 'https://youtu.be/TeJEOaXZKjE' },
-        { id: '9a74tNvAILc', title: 'MPLS Workbook Tutorial: Easy Lab Setup & Basic Connectivity Test (R1-R4)', thumbnailUrl: 'https://img.youtube.com/vi/9a74tNvAILc/hqdefault.jpg', videoUrl: 'https://youtu.be/9a74tNvAILc' },
-        { id: 'YyEjntvlhOw', title: 'How to Integrate MPLS VPN over GRE and DMVPN | EVE-NG PRO Demo', thumbnailUrl: 'https://img.youtube.com/vi/YyEjntvlhOw/hqdefault.jpg', videoUrl: 'https://youtu.be/YyEjntvlhOw' },
-        { id: 'TnR6DUkRnfI', title: 'Integrating MPLS VPN + AWS Direct Connect (BGP) - Net Route Academy', thumbnailUrl: 'https://img.youtube.com/vi/TnR6DUkRnfI/hqdefault.jpg', videoUrl: 'https://youtu.be/TnR6DUkRnfI' },
-        { id: '9vTRCGQm_Uo', title: 'CCIE Service Provider Practice Lab - Free Workbook', thumbnailUrl: 'https://img.youtube.com/vi/9vTRCGQm_Uo/hqdefault.jpg', videoUrl: 'https://youtu.be/9vTRCGQm_Uo' },
-        { id: 'adbJL6KIs3Y', title: 'How to Install EVE-NG Community - Net Route Academy', thumbnailUrl: 'https://img.youtube.com/vi/adbJL6KIs3Y/hqdefault.jpg', videoUrl: 'https://youtu.be/adbJL6KIs3Y' },
-        { id: 'eVR_qbEHUr8', title: 'MPLS VPN over DMVPN Workbook', thumbnailUrl: 'https://img.youtube.com/vi/eVR_qbEHUr8/hqdefault.jpg', videoUrl: 'https://youtu.be/eVR_qbEHUr8' },
-        { id: 'SJKqW-g-f-I', title: 'What is MPLS VPN Inter-AS Solutions (Workbook) - Net Route Academy', thumbnailUrl: 'https://img.youtube.com/vi/SJKqW-g-f-I/hqdefault.jpg', videoUrl: 'https://youtu.be/SJKqW-g-f-I' },
-        { id: 'xEQnWbrpkOI', title: 'Configure Etherchannel, VLAN and Trunk Port w/ EVE-NG', thumbnailUrl: 'https://img.youtube.com/vi/xEQnWbrpkOI/hqdefault.jpg', videoUrl: 'https://youtu.be/xEQnWbrpkOI' },
-    ];
-
-    const routingSwitchingVideos = [
-        { id: 'KRu2JSmeV8Y', title: 'Easy Steps to Install RUIJIE ROUTER in EVE-NG', thumbnailUrl: 'https://img.youtube.com/vi/KRu2JSmeV8Y/hqdefault.jpg', videoUrl: 'https://youtu.be/KRu2JSmeV8Y' },
-        { id: 'oJB1xMbXMXA', title: 'CONFIGURE MSTP + VRRP RUIJIE SWITCH - (No commentary)', thumbnailUrl: 'https://img.youtube.com/vi/oJB1xMbXMXA/hqdefault.jpg', videoUrl: 'https://youtu.be/oJB1xMbXMXA' },
-        { id: 'y0rP6exJMCg', title: 'Quick and Easy Steps to Install RUIJIE Switch in EVE-NG', thumbnailUrl: 'https://img.youtube.com/vi/y0rP6exJMCg/hqdefault.jpg', videoUrl: 'https://youtu.be/y0rP6exJMCg' },
-        { id: 'DsWNoy5zDO8', title: 'Preview: Running Ruijie Switch using EVE-NG | Installation & Deployment Guide', thumbnailUrl: 'https://img.youtube.com/vi/DsWNoy5zDO8/hqdefault.jpg', videoUrl: 'https://youtu.be/DsWNoy5zDO8' },
-        { id: 'xEQnWbrpkOI', title: 'Configure Etherchannel, VLAN and Trunk Port w/ EVE-NG', thumbnailUrl: 'https://img.youtube.com/vi/xEQnWbrpkOI/hqdefault.jpg', videoUrl: 'https://youtu.be/xEQnWbrpkOI' },
-        { id: '1JDQX0QW5PI', title: 'How to Install Zabbix on Windows (VMware) | Step-by-Step Monitoring Setup Guide', thumbnailUrl: 'https://img.youtube.com/vi/1JDQX0QW5PI/hqdefault.jpg', videoUrl: 'https://youtu.be/1JDQX0QW5PI' },
-        { id: 'XY0iUzhj6M4', title: 'How to Create a Network Diagram (Step-by-Step Tutorial)', thumbnailUrl: 'https://img.youtube.com/vi/XY0iUzhj6M4/hqdefault.jpg', videoUrl: 'https://youtu.be/XY0iUzhj6M4' },
-        { id: 'BBqR82E9jQ0', title: 'Beginner\'s Guide to IT Infrastructure & Change Management', thumbnailUrl: 'https://img.youtube.com/vi/BBqR82E9jQ0/hqdefault.jpg', videoUrl: 'https://youtu.be/BBqR82E9jQ0' },
-        { id: '2tKpEte8qlg', title: 'Run Cisco Labs on EVE-NG: Install & Test Cisco IOL Images Easily', thumbnailUrl: 'https://img.youtube.com/vi/2tKpEte8qlg/hqdefault.jpg', videoUrl: 'https://youtu.be/2tKpEte8qlg' },
-        { id: 'GbAiDGQHf94', title: 'How to install FORTINET [Step-by-Step] Part 1', thumbnailUrl: 'https://img.youtube.com/vi/GbAiDGQHf94/hqdefault.jpg', videoUrl: 'https://youtu.be/GbAiDGQHf94' },
-        { id: 'uaRTt4GoSMQ', title: 'How to install FORTINET [Step-by-Step] Part 2', thumbnailUrl: 'https://img.youtube.com/vi/uaRTt4GoSMQ/hqdefault.jpg', videoUrl: 'https://youtu.be/uaRTt4GoSMQ' },
-        { id: 'HdcdWtJxo54', title: 'Media Converter Setup: Extend Ethernet Using Fiber Like a Pro', thumbnailUrl: 'https://img.youtube.com/vi/HdcdWtJxo54/hqdefault.jpg', videoUrl: 'https://youtu.be/HdcdWtJxo54' },
+    const videos = [
+        { id: 'PkAX8TyP6pI', title: 'SCAM EXPOSED: Fake SSS, GCash, DOLE & Lazada Phishing Tricks', thumbnailUrl: 'https://img.youtube.com/vi/PkAX8TyP6pI/hqdefault.jpg', videoUrl: 'https://youtu.be/PkAX8TyP6pI' },
+        { id: 'nDKPOcnd_EA', title: 'The Art of Deception: Beyond Phishing - 1 Hour Topic', thumbnailUrl: 'https://img.youtube.com/vi/nDKPOcnd_EA/hqdefault.jpg', videoUrl: 'https://youtu.be/nDKPOcnd_EA' },
+        { id: 'bOoj78GXkac', title: 'Facebook Session Hijacking even w/ 2FA | Explained', thumbnailUrl: 'https://img.youtube.com/vi/bOoj78GXkac/hqdefault.jpg', videoUrl: 'https://youtu.be/bOoj78GXkac' },
+        { id: '6smlTxQkW1g', title: 'The Truth About Sextortion Email', thumbnailUrl: 'https://img.youtube.com/vi/6smlTxQkW1g/hqdefault.jpg', videoUrl: 'https://youtu.be/6smlTxQkW1g' },
+        { id: 'PM2pYzcNNfU', title: 'BDO Phishing Email Exposed! | Real Sample + Red Flags', thumbnailUrl: 'https://img.youtube.com/vi/PM2pYzcNNfU/hqdefault.jpg', videoUrl: 'https://youtu.be/PM2pYzcNNfU' },
+        { id: 'Lfr68um7ZY0', title: '⚠️ Facebook Phishing Link EXPLAINED — Don’t Fall for This Scam!', thumbnailUrl: 'https://img.youtube.com/vi/Lfr68um7ZY0/hqdefault.jpg', videoUrl: 'https://youtu.be/Lfr68um7ZY0' },
+        { id: 'sxPZPMOejHQ', title: 'Phishing in Clay Animation', thumbnailUrl: 'https://img.youtube.com/vi/sxPZPMOejHQ/hqdefault.jpg', videoUrl: 'https://youtu.be/sxPZPMOejHQ' },
     ];
     
-    const networkingShorts = [
-        { id: '8yDtpQSj9cE', title: 'What is Access Points?', thumbnailUrl: 'https://img.youtube.com/vi/8yDtpQSj9cE/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/8yDtpQSj9cE' },
-        { id: 'VnogTsehd3U', title: 'What is Router?', thumbnailUrl: 'https://img.youtube.com/vi/VnogTsehd3U/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/VnogTsehd3U' },
-        { id: 'OKj6BWTDNAg', title: 'How to show configuration in a CISCO Router', thumbnailUrl: 'https://img.youtube.com/vi/OKj6BWTDNAg/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/OKj6BWTDNAg' },
-        { id: 'wbVQXmduBBM', title: 'How to configure an interface', thumbnailUrl: 'https://img.youtube.com/vi/wbVQXmduBBM/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/wbVQXmduBBM' },
-        { id: 'UChqx_bm29E', title: 'How to show interface status', thumbnailUrl: 'https://img.youtube.com/vi/UChqx_bm29E/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/UChqx_bm29E' },
-        { id: 'zlz-U6resf4', title: 'How to use show CDP neighbor', thumbnailUrl: 'https://img.youtube.com/vi/zlz-U6resf4/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/zlz-U6resf4' },
-        { id: 'YhZhgsBBCD0', title: 'Show IP Route OSPF', thumbnailUrl: 'https://img.youtube.com/vi/YhZhgsBBCD0/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/YhZhgsBBCD0' },
-        { id: 'QXobWaWI_eM', title: 'Show IP OSPF Database', thumbnailUrl: 'https://img.youtube.com/vi/QXobWaWI_eM/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/QXobWaWI_eM' },
-        { id: 'ru9QRYK6HPc', title: 'Show IP OSPF Neighbor', thumbnailUrl: 'https://img.youtube.com/vi/ru9QRYK6HPc/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/ru9QRYK6HPc' },
-        { id: 'F4NAD2CDQk4', title: 'Show IP OSPF Interface Brief', thumbnailUrl: 'https://img.youtube.com/vi/F4NAD2CDQk4/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/F4NAD2CDQk4' },
-        { id: 'MJdL5kmoHBo', title: 'Quiz Time: OSI Layer', thumbnailUrl: 'https://img.youtube.com/vi/MJdL5kmoHBo/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/MJdL5kmoHBo' },
-        { id: 'QjLMrqbyRlk', title: 'Quiz Time: OSI Layer', thumbnailUrl: 'https://img.youtube.com/vi/QjLMrqbyRlk/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/QjLMrqbyRlk' },
-        { id: 'QmJpSPv6kNo', title: 'Quiz Time: Cyber Security', thumbnailUrl: 'https://img.youtube.com/vi/QmJpSPv6kNo/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/QmJpSPv6kNo' },
-        { id: '7BsiP65S9Eo', title: 'Quiz Time: Network Fundamentals', thumbnailUrl: 'https://img.youtube.com/vi/7BsiP65S9Eo/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/7BsiP65S9Eo' },
-        { id: 'iSlPMQm6MEQ', title: 'Quiz Time: Network Design', thumbnailUrl: 'https://img.youtube.com/vi/iSlPMQm6MEQ/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/iSlPMQm6MEQ' },
-        { id: 'VlmhRtEWm6U', title: 'Quiz Time: Wireless Technologies', thumbnailUrl: 'https://img.youtube.com/vi/VlmhRtEWm6U/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/VlmhRtEWm6U' },
+    const shorts = [
+        // --- NEW VIDEOS ADDED HERE ---
+        { id: '7nhUWKVbxm4', title: 'The Dark Truth About Modded Apps', thumbnailUrl: 'https://img.youtube.com/vi/7nhUWKVbxm4/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/7nhUWKVbxm4' },
+        { id: 'gMJQEQE9SfE', title: 'How Google Authenticator Protects you from hackers', thumbnailUrl: 'https://img.youtube.com/vi/gMJQEQE9SfE/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/gMJQEQE9SfE' },
+        // --- END NEW VIDEOS ---
+        { id: 'PcyRnM26-_E', title: 'Why SMS Based 2FA Isn’t Always Safe!', thumbnailUrl: 'https://img.youtube.com/vi/PcyRnM26-_E/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/PcyRnM26-_E?feature=share' },
+        { id: '6E-C3mTUhyY', title: 'What is Two Factor Authentication 2FA', thumbnailUrl: 'https://img.youtube.com/vi/6E-C3mTUhyY/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/6E-C3mTUhyY?feature=share' },
+        { id: 'KVRqKCYn0K8', title: '5 Common Cybersecurity Mistakes You Need to Avoid!', thumbnailUrl: 'https://img.youtube.com/vi/KVRqKCYn0K8/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/KVRqKCYn0K8?feature=share' },
+        { id: 'GJEtmQxq9DY', title: 'Are Your Apps Spying on You? Safeguard Your Data Now!', thumbnailUrl: 'https://img.youtube.com/vi/GJEtmQxq9DY/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/GJEtmQxq9DY?feature=share' },
+        { id: 'Zzum6IjcxI0', title: 'How to Spot Phishing Emails & Messages', thumbnailUrl: 'https://img.youtube.com/vi/Zzum6IjcxI0/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/Zzum6IjcxI0?feature=share' },
+        { id: 'SU7xY-eqUYI', title: 'What is Cybersecurity? Simple Explanation!', thumbnailUrl: 'https://img.youtube.com/vi/SU7xY-eqUYI/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/SU7xY-eqUYI?feature=share' },
+        { id: 'zLHPbY5DXWY', title: 'Why Your Social Media is a Goldmine for Hackers', thumbnailUrl: 'https://img.youtube.com/vi/zLHPbY5DXWY/hqdefault.jpg', videoUrl: 'https://youtube.com/shorts/zLHPbY5DXWY?feature=share' },
+    ];
+    
+    const guides = [
+        { id: '1', title: 'The Ultimate Phishing Survival Guide', description: "Learn how to identify, avoid, and report phishing attempts. Includes real-world examples and a checklist.", readUrl: '#', downloadUrl: '#' },
+        { id: '2', title: 'Scam Playbook: What to Do If You\'ve Been Scammed', description: "A step-by-step guide on reporting scams, recovering losses, and protecting yourself after an incident.", readUrl: '#', downloadUrl: '#' },
+        { id: '3', title: 'Securing Your Social Media Accounts', description: 'Best practices for Facebook, Instagram, Twitter, and other platforms. Two-Factor Authentication, privacy settings, and more.', readUrl: '#', downloadUrl: '#' },
+        { id: '4', title: 'Understanding Malware: Viruses, Ransomware & Spyware', description: 'An introduction to different types of malware, how they work, and how to defend against them.', readUrl: '#', downloadUrl: '#' },
     ];
     
     const TABS = [
-        { id: 'Lab-Workbook', label: 'Networking Lab Workbook' },
-        { id: 'Routing-Switching', label: 'Routing & Switching' },
+        { id: 'YouTube-Videos', label: 'YouTube Videos' },
         { id: 'YouTube-Shorts', label: 'YouTube Shorts' },
+        { id: 'Guides-Resources', label: 'Guides & Resources' },
         { id: 'Community-Contact', label: 'Community & Contact' },
     ];
 
     // --- COMPONENTS ---
 
-    // Styled like the Hero Section
+    // Styled like the Hero Section from reference
     const Header = () => (
         React.createElement("header", { className: "text-center pt-16 pb-10 px-4" },
             React.createElement("div", { className: "inline-flex items-center gap-2 bg-white/10 border border-white/10 px-3 py-1.5 rounded-full text-sm text-teal-200/80 mb-6" },
                 React.createElement("span", { className: "w-2 h-2 rounded-full bg-teal-400" }),
-                "Free Training • Labs • Tutorials"
+                "Cybersecurity • Scam Prevention • Guides"
             ),
             React.createElement("h1", { className: "text-4xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-lg" },
                 "Net Route ",
                 React.createElement("span", { className: "text-transparent bg-clip-text bg-gradient-to-r from-teal-200 to-teal-400" }, "Academy")
             ),
             React.createElement("p", { className: "mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed" }, 
-                "Your premium, free hub for networking labs, routing protocols, and cybersecurity tutorials."
+                "Your premium, free hub for cybersecurity insights, scam protection, and digital safety tutorials."
             )
         )
     );
@@ -192,6 +176,18 @@
         )
     );
 
+    const GuideCard = ({ title, description, readUrl, downloadUrl }) => (
+        React.createElement("div", { className: "glass rounded-2xl p-8 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal-900/10 transition-all duration-300 flex flex-col" },
+            React.createElement("div", { className: "w-12 h-12 bg-teal-500/10 rounded-lg flex items-center justify-center text-2xl mb-6 text-teal-300 border border-teal-500/20" }, "📄"),
+            React.createElement("h3", { className: "text-xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors" }, title),
+            React.createElement("p", { className: "text-slate-400 mb-6 leading-relaxed flex-grow" }, description),
+            React.createElement("div", { className: "flex items-center gap-3 mt-auto" },
+                React.createElement("a", { href: readUrl, target: "_blank", rel: "noopener noreferrer", className: "flex-1 bg-teal-500 text-slate-950 font-bold py-2.5 px-4 rounded-xl text-center hover:bg-teal-400 transition-colors" }, "Read Guide"),
+                React.createElement("a", { href: downloadUrl, target: "_blank", rel: "noopener noreferrer", className: "flex-1 bg-white/5 border border-white/10 text-white font-bold py-2.5 px-4 rounded-xl text-center hover:bg-white/10 transition-colors" }, "PDF")
+            )
+        )
+    );
+
     const YouTubeIcon = () => (
         React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24", fill: "currentColor" },
             React.createElement("path", { d: "M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" })
@@ -207,7 +203,7 @@
     const CommunityContact = () => (
         React.createElement("div", { className: "text-center max-w-3xl mx-auto glass p-10 rounded-3xl" },
             React.createElement("h2", { className: "text-3xl font-extrabold text-white mb-4" }, "Connect with NetRoute Academy"),
-            React.createElement("p", { className: "text-lg text-slate-400 mb-8" }, "Join our community to stay updated and discuss networking topics!"),
+            React.createElement("p", { className: "text-lg text-slate-400 mb-8" }, "Join our community to stay updated and discuss cybersecurity topics!"),
             React.createElement("div", { className: "flex flex-wrap justify-center gap-6 mb-12" },
                 React.createElement("a", { href: "https://www.youtube.com/@NetRouteAcademy", target: "_blank", rel: "noopener noreferrer", className: "flex items-center gap-3 bg-[#FF0000] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-red-900/40 hover:-translate-y-1 transition-all" },
                     React.createElement(YouTubeIcon, null), "YouTube Channel"),
@@ -225,7 +221,7 @@
     const Footer = () => (
         React.createElement("footer", { className: "border-t border-white/10 text-center py-10 mt-20" },
             React.createElement("p", { className: "text-slate-500 text-sm" }, `© ${new Date().getFullYear()} NetRoute Academy. All rights reserved.`),
-            React.createElement("p", { className: "text-slate-600 text-xs mt-2" }, "Keep learning, keep networking!")
+            React.createElement("p", { className: "text-slate-600 text-xs mt-2" }, "Stay safe, Stay informed!")
         )
     );
     
@@ -257,27 +253,17 @@
 
     // --- MAIN APP COMPONENT ---
     const App = () => {
-        const [activeTab, setActiveTab] = useState('Lab-Workbook');
+        const [activeTab, setActiveTab] = useState('YouTube-Videos');
         const renderContent = () => {
             switch (activeTab) {
-                case 'Lab-Workbook':
+                case 'YouTube-Videos':
                     return React.createElement(FadeIn, null,
                         React.createElement("div", { className: "text-center mb-10" },
-                             React.createElement("h2", { className: "text-3xl font-extrabold text-white" }, "Networking Lab Workbook"),
+                             React.createElement("h2", { className: "text-3xl font-extrabold text-white" }, "Latest YouTube Videos (Tagalog)"),
                              React.createElement("div", { className: "h-1 w-20 bg-teal-500 mx-auto mt-4 rounded-full" })
                         ),
                         React.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" },
-                            labWorkbookVideos.map(video => React.createElement(VideoCard, { key: video.id, ...video, buttonText: "Watch Video" }))
-                        )
-                    );
-                case 'Routing-Switching':
-                    return React.createElement(FadeIn, null,
-                        React.createElement("div", { className: "text-center mb-10" },
-                             React.createElement("h2", { className: "text-3xl font-extrabold text-white" }, "Routing & Switching Topics"),
-                             React.createElement("div", { className: "h-1 w-20 bg-teal-500 mx-auto mt-4 rounded-full" })
-                        ),
-                        React.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" },
-                            routingSwitchingVideos.map(video => React.createElement(VideoCard, { key: video.id, ...video, buttonText: "Watch Video" }))
+                            videos.map(video => React.createElement(VideoCard, { key: video.id, ...video, buttonText: "Watch Video" }))
                         )
                     );
                 case 'YouTube-Shorts':
@@ -287,7 +273,21 @@
                              React.createElement("div", { className: "h-1 w-20 bg-teal-500 mx-auto mt-4 rounded-full" })
                         ),
                         React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" },
-                            networkingShorts.map(short => React.createElement(VideoCard, { key: short.id, ...short, buttonText: "Watch Short" }))
+                            shorts.map(short => React.createElement(VideoCard, { key: short.id, ...short, buttonText: "Watch Short" }))
+                        )
+                    );
+                case 'Guides-Resources':
+                    return React.createElement(FadeIn, null,
+                        React.createElement("div", { className: "text-center mb-10" },
+                             React.createElement("h2", { className: "text-3xl font-extrabold text-white" }, "Guides & Resources"),
+                             React.createElement("div", { className: "h-1 w-20 bg-teal-500 mx-auto mt-4 rounded-full" }),
+                             React.createElement("p", { className: "text-slate-400 mt-4 max-w-2xl mx-auto" }, "Helpful guides, playbooks, and checklists to boost your cybersecurity knowledge.")
+                        ),
+                        React.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8" },
+                            guides.map(guide => React.createElement(GuideCard, { key: guide.id, ...guide }))
+                        ),
+                         React.createElement("div", { className: "text-center mt-12" },
+                            React.createElement("a", { href: "#", className: "inline-block bg-white/10 text-white font-bold py-3 px-8 rounded-xl hover:bg-white/20 transition border border-white/10" }, "View All Resources")
                         )
                     );
                 case 'Community-Contact':
